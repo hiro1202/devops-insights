@@ -131,7 +131,16 @@ DORA は、メトリクス導入時にチームが陥りやすい典型的な落
 
 ---
 
-## 改善の進め方
+## さらに踏み込む(Dive into the research)
+
+DORA の研究は本ガイドの 5 指標だけにとどまらず、高パフォーマンスを支えるさまざまな**ケイパビリティ(capabilities)** を扱っています。各ケイパビリティがソフトウェアデリバリーに与える影響については、以下のページから掘り下げられます。
+
+- [DORA's research](https://dora.dev/research) — DORA の研究全体のエントリポイント
+- [Capability catalog](https://dora.dev/capabilities/) — ハイパフォーマンスに寄与するケイパビリティのカタログ
+
+---
+
+## 次のステップ(Next steps)
 
 ガイドが推奨する改善プロセス:
 
@@ -146,15 +155,6 @@ DORA は、メトリクス導入時にチームが陥りやすい典型的な落
 > 完璧な計測基盤を整える投資より、まず対話・DORA Quick Check・プリセット統合のある製品から始めるほうが、価値につながることが多いとされています。
 
 最初の改善策としてよく推奨されるのは **[変更バッチサイズの縮小](https://dora.dev/capabilities/working-in-small-batches/)** です。変更が小さいほど、デリバリープロセスを通すのも、失敗時の復旧も容易になります。
-
----
-
-## さらに踏み込む(Dive into the research)
-
-DORA の研究は本ガイドの 5 指標だけにとどまらず、高パフォーマンスを支えるさまざまな**ケイパビリティ(capabilities)** を扱っています。各ケイパビリティがソフトウェアデリバリーに与える影響については、以下のページから掘り下げられます。
-
-- [DORA's research](https://dora.dev/research) — DORA の研究全体のエントリポイント
-- [Capability catalog](https://dora.dev/capabilities/) — ハイパフォーマンスに寄与するケイパビリティのカタログ
 
 ---
 
