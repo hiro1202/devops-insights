@@ -149,6 +149,15 @@ DORA は、メトリクス導入時にチームが陥りやすい典型的な落
 
 ---
 
+## さらに踏み込む(Dive into the research)
+
+DORA の研究は本ガイドの 5 指標だけにとどまらず、高パフォーマンスを支えるさまざまな**ケイパビリティ(capabilities)** を扱っています。各ケイパビリティがソフトウェアデリバリーに与える影響については、以下のページから掘り下げられます。
+
+- [DORA's research](https://dora.dev/research) — DORA の研究全体のエントリポイント
+- [Capability catalog](https://dora.dev/capabilities/) — ハイパフォーマンスに寄与するケイパビリティのカタログ
+
+---
+
 ## 参考
 
 - [DORA's software delivery performance metrics](https://dora.dev/guides/dora-metrics/)
