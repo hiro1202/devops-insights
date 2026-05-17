@@ -12,6 +12,6 @@
 ## 📚 Notes
 
 - [DORA Four Keys](./dora_metrics.md)
-- [DX Core 4](./dx_core_4.md)
 - [SPACE Framework](./space.md)
 - [Developer Experience (DevEx)](./dev_ex.md)
+- [DX Core 4](./dx_core_4.md)

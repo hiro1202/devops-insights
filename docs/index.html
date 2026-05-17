@@ -1,298 +1,295 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DevOps Insights — Engineering Performance Dashboard</title>
-    <meta
-      name="description"
-      content="DORA Four Keys / DX Core 4 / SPACE / DevEx を一望するエンジニアリング・パフォーマンス・ダッシュボード（デザインサンプル / 数値はダミー）"
-    />
-    <meta property="og:title" content="DevOps Insights — Engineering Performance Dashboard" />
-    <meta
-      property="og:description"
-      content="DORA / DX Core 4 / SPACE / DevEx を一望するダッシュボードのデザインサンプル。"
-    />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0B1020" />
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/dashboard.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <div class="brand-text">
-          <span class="brand-name">DevOps Insights</span>
-          <span class="brand-sub">Engineering Performance Dashboard</span>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevOps Insights — Engineering Performance Dashboard</title>
+  <meta name="description"
+    content="DORA Four Keys / DX Core 4 / SPACE / DevEx を一望するエンジニアリング・パフォーマンス・ダッシュボード（デザインサンプル / 数値はダミー）" />
+  <meta property="og:title" content="DevOps Insights — Engineering Performance Dashboard" />
+  <meta property="og:description" content="DORA / DX Core 4 / SPACE / DevEx を一望するダッシュボードのデザインサンプル。" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0B1020" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/dashboard.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <span class="brand-name">DevOps Insights</span>
+        <span class="brand-sub">Engineering Performance Dashboard</span>
       </div>
+    </div>
 
-      <div class="topbar-controls">
-        <span class="live">
-          <span class="live-dot" aria-hidden="true"></span>
-          Live
-        </span>
-
-        <div class="segment" role="tablist" aria-label="期間">
-          <button role="tab" aria-selected="false">7d</button>
-          <button role="tab" aria-selected="true">30d</button>
-          <button role="tab" aria-selected="false">90d</button>
-        </div>
-
-        <label class="select">
-          <span class="select-label">Team</span>
-          <select>
-            <option>All teams</option>
-            <option>Platform</option>
-            <option>Web</option>
-            <option>Mobile</option>
-            <option>Data</option>
-          </select>
-        </label>
-
-        <button class="ghost-btn" type="button">Export</button>
-      </div>
-    </header>
-
-    <main class="layout">
-      <!-- DORA Four Keys -->
-      <section class="section" aria-labelledby="dora-h">
-        <div class="section-head">
-          <div>
-            <h2 id="dora-h" class="section-title">DORA Four Keys</h2>
-            <p class="section-sub">過去30日 / 前期間比</p>
-          </div>
-          <a class="section-link" href="./articles/dora-metrics.html">指標の解説 →</a>
-        </div>
-
-        <div class="kpi-grid">
-          <article class="kpi" data-trend="up-good">
-            <header class="kpi-head">
-              <span class="kpi-label">Deployment Frequency</span>
-              <span class="badge badge-elite">Elite</span>
-            </header>
-            <div class="kpi-value">
-              42<span class="kpi-unit">/ week</span>
-            </div>
-            <footer class="kpi-foot">
-              <span class="delta up">▲ 12%</span>
-              <canvas class="spark" data-spark="deploy" height="36"></canvas>
-            </footer>
-          </article>
-
-          <article class="kpi" data-trend="down-good">
-            <header class="kpi-head">
-              <span class="kpi-label">Lead Time for Changes</span>
-              <span class="badge badge-high">High</span>
-            </header>
-            <div class="kpi-value">
-              2.3<span class="kpi-unit">days</span>
-            </div>
-            <footer class="kpi-foot">
-              <span class="delta down good">▼ 0.4d</span>
-              <canvas class="spark" data-spark="lead" height="36"></canvas>
-            </footer>
-          </article>
-
-          <article class="kpi" data-trend="down-good">
-            <header class="kpi-head">
-              <span class="kpi-label">Change Failure Rate</span>
-              <span class="badge badge-high">High</span>
-            </header>
-            <div class="kpi-value">
-              4.1<span class="kpi-unit">%</span>
-            </div>
-            <footer class="kpi-foot">
-              <span class="delta down good">▼ 0.8pt</span>
-              <canvas class="spark" data-spark="cfr" height="36"></canvas>
-            </footer>
-          </article>
-
-          <article class="kpi" data-trend="down-good">
-            <header class="kpi-head">
-              <span class="kpi-label">Mean Time to Restore</span>
-              <span class="badge badge-elite">Elite</span>
-            </header>
-            <div class="kpi-value">
-              1.2<span class="kpi-unit">hours</span>
-            </div>
-            <footer class="kpi-foot">
-              <span class="delta down good">▼ 15m</span>
-              <canvas class="spark" data-spark="mttr" height="36"></canvas>
-            </footer>
-          </article>
-        </div>
-      </section>
-
-      <!-- Deployment trend -->
-      <section class="section" aria-labelledby="trend-h">
-        <div class="section-head">
-          <div>
-            <h2 id="trend-h" class="section-title">Deployments & Incidents</h2>
-            <p class="section-sub">日次デプロイ数と発生したインシデント</p>
-          </div>
-          <div class="legend">
-            <span class="legend-item"><i class="dot dot-cyan"></i>Deploys</span>
-            <span class="legend-item"><i class="dot dot-red"></i>Incidents</span>
-          </div>
-        </div>
-        <div class="chart-wrap chart-tall">
-          <canvas id="deploys-chart"></canvas>
-        </div>
-      </section>
-
-      <!-- SPACE + DX Core 4 + DevEx -->
-      <section class="grid-3">
-        <article class="card" aria-labelledby="space-h">
-          <header class="card-head">
-            <h3 id="space-h" class="card-title">SPACE Framework</h3>
-            <a class="card-link" href="./articles/space.html">解説 →</a>
-          </header>
-          <div class="chart-wrap chart-mid">
-            <canvas id="space-radar"></canvas>
-          </div>
-          <ul class="legend-list">
-            <li><span>Satisfaction</span><b>4.2</b></li>
-            <li><span>Performance</span><b>3.8</b></li>
-            <li><span>Activity</span><b>4.5</b></li>
-            <li><span>Communication</span><b>3.9</b></li>
-            <li><span>Efficiency</span><b>4.1</b></li>
-          </ul>
-        </article>
-
-        <article class="card" aria-labelledby="dxcore-h">
-          <header class="card-head">
-            <h3 id="dxcore-h" class="card-title">DX Core 4</h3>
-            <a class="card-link" href="./articles/dx-core-4.html">解説 →</a>
-          </header>
-          <div class="chart-wrap chart-mid">
-            <canvas id="dxcore-bars"></canvas>
-          </div>
-          <ul class="legend-list">
-            <li><span>Diffs / Engineer</span><b>8.2</b></li>
-            <li><span>Lead Time</span><b>2.3d</b></li>
-            <li><span>Deploys / week</span><b>42</b></li>
-            <li><span>Change Failure Rate</span><b>4.1%</b></li>
-          </ul>
-        </article>
-
-        <article class="card" aria-labelledby="devex-h">
-          <header class="card-head">
-            <h3 id="devex-h" class="card-title">DevEx Scores</h3>
-            <a class="card-link" href="./articles/dev-ex.html">解説 →</a>
-          </header>
-          <ul class="score-list">
-            <li>
-              <div class="score-row">
-                <span class="score-label">Feedback Loops</span>
-                <span class="score-val">4.7</span>
-              </div>
-              <div class="bar"><span style="width: 94%"></span></div>
-              <span class="score-meta">CI 中央値 6m 12s ・ PR レビュー 1.8h</span>
-            </li>
-            <li>
-              <div class="score-row">
-                <span class="score-label">Cognitive Load</span>
-                <span class="score-val warn">3.6</span>
-              </div>
-              <div class="bar"><span style="width: 72%"></span></div>
-              <span class="score-meta">Onboarding 11d ・ ドキュメント満足度 67%</span>
-            </li>
-            <li>
-              <div class="score-row">
-                <span class="score-label">Flow State</span>
-                <span class="score-val">4.1</span>
-              </div>
-              <div class="bar"><span style="width: 82%"></span></div>
-              <span class="score-meta">Focus 時間 / 日 3.4h ・ 中断 5.1 回</span>
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- Teams table -->
-      <section class="section" aria-labelledby="teams-h">
-        <div class="section-head">
-          <div>
-            <h2 id="teams-h" class="section-title">Teams Overview</h2>
-            <p class="section-sub">チーム別のスナップショット</p>
-          </div>
-        </div>
-
-        <div class="table-wrap">
-          <table class="data">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Deploys / wk</th>
-                <th>Lead Time</th>
-                <th>CFR</th>
-                <th>MTTR</th>
-                <th>DevEx</th>
-                <th>Trend (30d)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="team-dot dot-cyan"></span>Platform</td>
-                <td class="num">58</td>
-                <td class="num">1.4d</td>
-                <td class="num good">2.1%</td>
-                <td class="num">42m</td>
-                <td><span class="pill pill-good">4.4</span></td>
-                <td><canvas class="spark" data-spark="t1" height="28"></canvas></td>
-              </tr>
-              <tr>
-                <td><span class="team-dot dot-purple"></span>Web</td>
-                <td class="num">47</td>
-                <td class="num">2.1d</td>
-                <td class="num">4.0%</td>
-                <td class="num">1.1h</td>
-                <td><span class="pill pill-good">4.2</span></td>
-                <td><canvas class="spark" data-spark="t2" height="28"></canvas></td>
-              </tr>
-              <tr>
-                <td><span class="team-dot dot-green"></span>Mobile</td>
-                <td class="num">23</td>
-                <td class="num">3.8d</td>
-                <td class="num warn">6.2%</td>
-                <td class="num">2.4h</td>
-                <td><span class="pill pill-warn">3.5</span></td>
-                <td><canvas class="spark" data-spark="t3" height="28"></canvas></td>
-              </tr>
-              <tr>
-                <td><span class="team-dot dot-amber"></span>Data</td>
-                <td class="num">31</td>
-                <td class="num">2.7d</td>
-                <td class="num">3.9%</td>
-                <td class="num">1.6h</td>
-                <td><span class="pill pill-good">4.0</span></td>
-                <td><canvas class="spark" data-spark="t4" height="28"></canvas></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>DevOps Insights · デザインサンプル（数値はダミー）</span>
-      <span class="footer-links">
-        <a href="./articles/dora-metrics.html">DORA</a>
-        <a href="./articles/dx-core-4.html">DX Core 4</a>
-        <a href="./articles/space.html">SPACE</a>
-        <a href="./articles/dev-ex.html">DevEx</a>
+    <div class="topbar-controls">
+      <span class="live">
+        <span class="live-dot" aria-hidden="true"></span>
+        Live
       </span>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="./assets/js/dashboard.js"></script>
-  </body>
+      <div class="segment" role="tablist" aria-label="期間">
+        <button role="tab" aria-selected="false">7d</button>
+        <button role="tab" aria-selected="true">30d</button>
+        <button role="tab" aria-selected="false">90d</button>
+      </div>
+
+      <label class="select">
+        <span class="select-label">Team</span>
+        <select>
+          <option>All teams</option>
+          <option>Platform</option>
+          <option>Web</option>
+          <option>Mobile</option>
+          <option>Data</option>
+        </select>
+      </label>
+
+      <button class="ghost-btn" type="button">Export</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- DORA Four Keys -->
+    <section class="section" aria-labelledby="dora-h">
+      <div class="section-head">
+        <div>
+          <h2 id="dora-h" class="section-title">DORA Four Keys</h2>
+          <p class="section-sub">過去30日 / 前期間比</p>
+        </div>
+        <a class="section-link" href="./articles/dora-metrics.html">指標の解説 →</a>
+      </div>
+
+      <div class="kpi-grid">
+        <article class="kpi" data-trend="up-good">
+          <header class="kpi-head">
+            <span class="kpi-label">Deployment Frequency</span>
+            <span class="badge badge-elite">Elite</span>
+          </header>
+          <div class="kpi-value">
+            42<span class="kpi-unit">/ week</span>
+          </div>
+          <footer class="kpi-foot">
+            <span class="delta up">▲ 12%</span>
+            <canvas class="spark" data-spark="deploy" height="36"></canvas>
+          </footer>
+        </article>
+
+        <article class="kpi" data-trend="down-good">
+          <header class="kpi-head">
+            <span class="kpi-label">Lead Time for Changes</span>
+            <span class="badge badge-high">High</span>
+          </header>
+          <div class="kpi-value">
+            2.3<span class="kpi-unit">days</span>
+          </div>
+          <footer class="kpi-foot">
+            <span class="delta down good">▼ 0.4d</span>
+            <canvas class="spark" data-spark="lead" height="36"></canvas>
+          </footer>
+        </article>
+
+        <article class="kpi" data-trend="down-good">
+          <header class="kpi-head">
+            <span class="kpi-label">Change Failure Rate</span>
+            <span class="badge badge-high">High</span>
+          </header>
+          <div class="kpi-value">
+            4.1<span class="kpi-unit">%</span>
+          </div>
+          <footer class="kpi-foot">
+            <span class="delta down good">▼ 0.8pt</span>
+            <canvas class="spark" data-spark="cfr" height="36"></canvas>
+          </footer>
+        </article>
+
+        <article class="kpi" data-trend="down-good">
+          <header class="kpi-head">
+            <span class="kpi-label">Mean Time to Restore</span>
+            <span class="badge badge-elite">Elite</span>
+          </header>
+          <div class="kpi-value">
+            1.2<span class="kpi-unit">hours</span>
+          </div>
+          <footer class="kpi-foot">
+            <span class="delta down good">▼ 15m</span>
+            <canvas class="spark" data-spark="mttr" height="36"></canvas>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- Deployment trend -->
+    <section class="section" aria-labelledby="trend-h">
+      <div class="section-head">
+        <div>
+          <h2 id="trend-h" class="section-title">Deployments & Incidents</h2>
+          <p class="section-sub">日次デプロイ数と発生したインシデント</p>
+        </div>
+        <div class="legend">
+          <span class="legend-item"><i class="dot dot-cyan"></i>Deploys</span>
+          <span class="legend-item"><i class="dot dot-red"></i>Incidents</span>
+        </div>
+      </div>
+      <div class="chart-wrap chart-tall">
+        <canvas id="deploys-chart"></canvas>
+      </div>
+    </section>
+
+    <!-- SPACE + DX Core 4 + DevEx -->
+    <section class="grid-3">
+      <article class="card" aria-labelledby="space-h">
+        <header class="card-head">
+          <h3 id="space-h" class="card-title">SPACE Framework</h3>
+          <a class="card-link" href="./articles/space.html">解説 →</a>
+        </header>
+        <div class="chart-wrap chart-mid">
+          <canvas id="space-radar"></canvas>
+        </div>
+        <ul class="legend-list">
+          <li><span>Satisfaction</span><b>4.2</b></li>
+          <li><span>Performance</span><b>3.8</b></li>
+          <li><span>Activity</span><b>4.5</b></li>
+          <li><span>Communication</span><b>3.9</b></li>
+          <li><span>Efficiency</span><b>4.1</b></li>
+        </ul>
+      </article>
+
+      <article class="card" aria-labelledby="dxcore-h">
+        <header class="card-head">
+          <h3 id="dxcore-h" class="card-title">DX Core 4</h3>
+          <a class="card-link" href="./articles/dx-core-4.html">解説 →</a>
+        </header>
+        <div class="chart-wrap chart-mid">
+          <canvas id="dxcore-bars"></canvas>
+        </div>
+        <ul class="legend-list">
+          <li><span>Diffs / Engineer</span><b>8.2</b></li>
+          <li><span>Lead Time</span><b>2.3d</b></li>
+          <li><span>Deploys / week</span><b>42</b></li>
+          <li><span>Change Failure Rate</span><b>4.1%</b></li>
+        </ul>
+      </article>
+
+      <article class="card" aria-labelledby="devex-h">
+        <header class="card-head">
+          <h3 id="devex-h" class="card-title">DevEx Scores</h3>
+          <a class="card-link" href="./articles/dev-ex.html">解説 →</a>
+        </header>
+        <ul class="score-list">
+          <li>
+            <div class="score-row">
+              <span class="score-label">Feedback Loops</span>
+              <span class="score-val">4.7</span>
+            </div>
+            <div class="bar"><span style="width: 94%"></span></div>
+            <span class="score-meta">CI 中央値 6m 12s ・ PR レビュー 1.8h</span>
+          </li>
+          <li>
+            <div class="score-row">
+              <span class="score-label">Cognitive Load</span>
+              <span class="score-val warn">3.6</span>
+            </div>
+            <div class="bar"><span style="width: 72%"></span></div>
+            <span class="score-meta">Onboarding 11d ・ ドキュメント満足度 67%</span>
+          </li>
+          <li>
+            <div class="score-row">
+              <span class="score-label">Flow State</span>
+              <span class="score-val">4.1</span>
+            </div>
+            <div class="bar"><span style="width: 82%"></span></div>
+            <span class="score-meta">Focus 時間 / 日 3.4h ・ 中断 5.1 回</span>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Teams table -->
+    <section class="section" aria-labelledby="teams-h">
+      <div class="section-head">
+        <div>
+          <h2 id="teams-h" class="section-title">Teams Overview</h2>
+          <p class="section-sub">チーム別のスナップショット</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Deploys / wk</th>
+              <th>Lead Time</th>
+              <th>CFR</th>
+              <th>MTTR</th>
+              <th>DevEx</th>
+              <th>Trend (30d)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="team-dot dot-cyan"></span>Platform</td>
+              <td class="num">58</td>
+              <td class="num">1.4d</td>
+              <td class="num good">2.1%</td>
+              <td class="num">42m</td>
+              <td><span class="pill pill-good">4.4</span></td>
+              <td><canvas class="spark" data-spark="t1" height="28"></canvas></td>
+            </tr>
+            <tr>
+              <td><span class="team-dot dot-purple"></span>Web</td>
+              <td class="num">47</td>
+              <td class="num">2.1d</td>
+              <td class="num">4.0%</td>
+              <td class="num">1.1h</td>
+              <td><span class="pill pill-good">4.2</span></td>
+              <td><canvas class="spark" data-spark="t2" height="28"></canvas></td>
+            </tr>
+            <tr>
+              <td><span class="team-dot dot-green"></span>Mobile</td>
+              <td class="num">23</td>
+              <td class="num">3.8d</td>
+              <td class="num warn">6.2%</td>
+              <td class="num">2.4h</td>
+              <td><span class="pill pill-warn">3.5</span></td>
+              <td><canvas class="spark" data-spark="t3" height="28"></canvas></td>
+            </tr>
+            <tr>
+              <td><span class="team-dot dot-amber"></span>Data</td>
+              <td class="num">31</td>
+              <td class="num">2.7d</td>
+              <td class="num">3.9%</td>
+              <td class="num">1.6h</td>
+              <td><span class="pill pill-good">4.0</span></td>
+              <td><canvas class="spark" data-spark="t4" height="28"></canvas></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>DevOps Insights · デザインサンプル（数値はダミー）</span>
+    <span class="footer-links">
+      <a href="./articles/dora-metrics.html">DORA</a>
+      <a href="./articles/space.html">SPACE</a>
+      <a href="./articles/dev-ex.html">DevEx</a>
+      <a href="./articles/dx-core-4.html">DX Core 4</a>
+    </span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+</body>
+
 </html>
