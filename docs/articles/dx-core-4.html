@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DX Core 4 — DevOps Insights</title>
+    <meta
+      name="description"
+      content="DX 社が提唱する DX Core 4。スピード・有効性・品質・インパクトの 4 軸でエンジニアリング組織を測る指標と測定手法。"
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/article.css" />
+  </head>
+  <body>
+    <header class="topbar topbar-article">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">DevOps Insights</span>
+          <span class="brand-sub">Engineering Performance Dashboard</span>
+        </div>
+      </a>
+      <nav class="article-nav" aria-label="記事">
+        <a href="./dora-metrics.html">DORA</a>
+        <a class="active" href="./dx-core-4.html">DX Core 4</a>
+        <a href="./space.html">SPACE</a>
+        <a href="./dev-ex.html">DevEx</a>
+      </nav>
+    </header>
+
+    <main class="article">
+      <a class="article-back" href="../index.html">← ダッシュボードに戻る</a>
+
+      <header class="article-head">
+        <span class="article-eyebrow">DX Core 4</span>
+        <h1>DX Core 4</h1>
+        <p class="article-lede">
+          <strong>スピード・有効性・品質・インパクト</strong> の 4 軸でエンジニアリング組織を捉える、DX 社発のメトリクスフレームワーク。
+        </p>
+      </header>
+
+      <article class="prose">
+        <h2>4 軸の指標体系</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>スピード</th>
+                <th>有効性</th>
+                <th>品質</th>
+                <th>インパクト</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>主要指標</strong></td>
+                <td>エンジニアあたりの Diff 数*<br>(PR または MR)<br><br><em>*個人レベルでは使用しない</em></td>
+                <td>開発者体験指数 (DXI)<br><br><em>（DX 社が開発した、主要なエンジニアリング・パフォーマンス要因の指標）</em></td>
+                <td>変更失敗率</td>
+                <td>新機能(Capability)開発に費やす時間の割合</td>
+              </tr>
+              <tr>
+                <td><strong>副次指標</strong></td>
+                <td>・リードタイム<br>・デプロイ頻度<br>・体感的なデリバリー速度</td>
+                <td>・10 件目の PR までの時間<br>・デリバリーのしやすさ<br>・望ましくない離職率*<br><br><em>*組織レベルのみ</em></td>
+                <td>・デプロイ失敗からの復旧時間<br>・体感的なソフトウェア品質<br>・運用健全性とセキュリティ指標</td>
+                <td>・新たな取組の進捗と ROI<br>・エンジニアあたりの売上*<br>・売上に対する R&amp;D の割合*<br><br><em>*組織レベルのみ</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>測定手法</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>手法</th><th>メリット</th><th>課題</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>システムメトリクス</td><td>客観的な指標をリアルタイムで取得できる</td><td>システム横断での可視化とデータの正規化</td></tr>
+              <tr><td>自己申告メトリクス</td><td>迅速なデータ収集と体験指標の取得</td><td>設問設計、回答率</td></tr>
+              <tr><td>体験サンプリング</td><td>特定の場面に絞ったリアルタイムの洞察</td><td>セットアップの複雑さ、データ収集にかかる時間</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>参考</h2>
+        <ul>
+          <li><a href="https://getdx.com/news/introducing-the-dx-core-4/" target="_blank" rel="noopener">Introducing the DX Core 4</a></li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <span>DevOps Insights · デザインサンプル（数値はダミー）</span>
+      <span class="footer-links">
+        <a href="./dora-metrics.html">DORA</a>
+        <a href="./dx-core-4.html">DX Core 4</a>
+        <a href="./space.html">SPACE</a>
+        <a href="./dev-ex.html">DevEx</a>
+      </span>
+    </footer>
+  </body>
+</html>

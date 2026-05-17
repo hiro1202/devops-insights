@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SPACE Framework — DevOps Insights</title>
+    <meta
+      name="description"
+      content="開発者の生産性を多面的に捉える SPACE フレームワーク。Satisfaction / Performance / Activity / Communication / Efficiency の 5 観点と代表的なメトリクス。"
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/article.css" />
+  </head>
+  <body>
+    <header class="topbar topbar-article">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">DevOps Insights</span>
+          <span class="brand-sub">Engineering Performance Dashboard</span>
+        </div>
+      </a>
+      <nav class="article-nav" aria-label="記事">
+        <a href="./dora-metrics.html">DORA</a>
+        <a href="./dx-core-4.html">DX Core 4</a>
+        <a class="active" href="./space.html">SPACE</a>
+        <a href="./dev-ex.html">DevEx</a>
+      </nav>
+    </header>
+
+    <main class="article">
+      <a class="article-back" href="../index.html">← ダッシュボードに戻る</a>
+
+      <header class="article-head">
+        <span class="article-eyebrow">SPACE</span>
+        <h1>SPACE Framework</h1>
+        <p class="article-lede">
+          開発者の生産性を多面的に捉えるための 5 つの観点
+          (<strong>S</strong>atisfaction, <strong>P</strong>erformance,
+          <strong>A</strong>ctivity, <strong>C</strong>ommunication &amp; Collaboration,
+          <strong>E</strong>fficiency &amp; Flow)で構成されるフレームワーク。
+        </p>
+      </header>
+
+      <article class="prose">
+        <h2>5 つの観点</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>観点</th><th>概要</th></tr></thead>
+            <tbody>
+              <tr><td><strong>S</strong> — 満足度とウェルビーイング</td><td>開発者の業務・チーム・ツール・文化への満足度、健全さ・幸福度</td></tr>
+              <tr><td><strong>P</strong> — パフォーマンス</td><td>システムやプロセスがもたらす結果(品質・影響)</td></tr>
+              <tr><td><strong>A</strong> — 活動</td><td>業務の遂行中に完了したアクション・アウトプットの量</td></tr>
+              <tr><td><strong>C</strong> — コミュニケーションとコラボレーション</td><td>メンバー・チーム間のやり取りや共同作業の状況</td></tr>
+              <tr><td><strong>E</strong> — 効率とフロー</td><td>中断や遅延なく作業を進められるか</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>S — 満足度とウェルビーイング</h2>
+        <ul>
+          <li><strong>満足度</strong>: 開発者は、業務・チーム・ツール・文化にどの程度満足しているか</li>
+          <li><strong>ウェルビーイング</strong>: 開発者はどのくらい健全で幸せか</li>
+        </ul>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>開発者の満足度</li>
+          <li>開発者のリテンション期間</li>
+          <li>エンゲージメント</li>
+          <li>燃え尽き</li>
+        </ul>
+
+        <h2>P — パフォーマンス</h2>
+        <p>システムやプロセスの結果を評価する。パフォーマンスには多くの変数があるため、定量化は困難。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul>
+          <li><strong>コードの品質</strong>
+            <ul>
+              <li>信頼性</li>
+              <li>バグがないこと</li>
+              <li>継続的なサービス正常性</li>
+            </ul>
+          </li>
+          <li><strong>コードの影響</strong>
+            <ul>
+              <li>顧客満足度</li>
+              <li>顧客の導入とリテンション期間</li>
+              <li>機能の使用状況</li>
+              <li>コスト削減</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>A — 活動</h2>
+        <p>作業の実行中に完了したアクションまたは出力の数を把握する。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>完了したコードレビューの数</li>
+          <li>コーディング時間</li>
+          <li>コミットの回数</li>
+          <li>コード行</li>
+          <li>完了したストーリーポイント</li>
+          <li>デプロイ頻度</li>
+        </ul>
+
+        <h2>C — コミュニケーションとコラボレーション</h2>
+        <p>メンバーやチームがどのようにコミュニケーションをとり、共同作業しているかを把握する。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>コードレビュースコア(品質または思慮深さ)</li>
+          <li>Pull Request のマージ時間</li>
+          <li>会議の質</li>
+          <li>ドキュメントと専門知識の発見可能性</li>
+        </ul>
+
+        <h2>E — 効率とフロー</h2>
+        <p>開発者やチームが業務の進行状況を把握し、中断・遅延することなく完了できるかを測定する。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>フローを維持し、作業を完了する開発者の認識された能力</li>
+          <li>コードレビューのタイミング</li>
+          <li>プロセス内のユーザー/チーム間のハンドオフの数(作業や責任が人・チーム間で受け渡される回数。多いほど待ち時間やコンテキスト切替が発生しフローが阻害される)</li>
+          <li>中断の数(Slack のメンション、突発的なミーティング、アラート対応など、フロー状態から引き剥がされる出来事の回数)</li>
+        </ul>
+
+        <h2>参考</h2>
+        <ul>
+          <li><a href="https://developer.microsoft.com/ja-jp/developer-experience" target="_blank" rel="noopener">開発者エクスペリエンス</a></li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <span>DevOps Insights · デザインサンプル（数値はダミー）</span>
+      <span class="footer-links">
+        <a href="./dora-metrics.html">DORA</a>
+        <a href="./dx-core-4.html">DX Core 4</a>
+        <a href="./space.html">SPACE</a>
+        <a href="./dev-ex.html">DevEx</a>
+      </span>
+    </footer>
+  </body>
+</html>

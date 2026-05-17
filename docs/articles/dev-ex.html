@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Developer Experience (DevEx) — DevOps Insights</title>
+    <meta
+      name="description"
+      content="DevEx の 3 中核要素（Feedback Loops / Cognitive Load / Flow State）と測定・改善アプローチ、AI 時代の DevEx、DORA・SPACE との関係。"
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/article.css" />
+  </head>
+  <body>
+    <header class="topbar topbar-article">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">DevOps Insights</span>
+          <span class="brand-sub">Engineering Performance Dashboard</span>
+        </div>
+      </a>
+      <nav class="article-nav" aria-label="記事">
+        <a href="./dora-metrics.html">DORA</a>
+        <a href="./dx-core-4.html">DX Core 4</a>
+        <a href="./space.html">SPACE</a>
+        <a class="active" href="./dev-ex.html">DevEx</a>
+      </nav>
+    </header>
+
+    <main class="article">
+      <a class="article-back" href="../index.html">← ダッシュボードに戻る</a>
+
+      <header class="article-head">
+        <span class="article-eyebrow">DevEx</span>
+        <h1>Developer Experience (DevEx)</h1>
+        <p class="article-lede">
+          開発者が日々の開発業務を <strong>どう体験しているか</strong> を捉える考え方。フィードバックループ・認知負荷・フロー状態の 3 観点で、価値ある仕事に集中できる状態を作る。
+        </p>
+      </header>
+
+      <article class="prose">
+        <p>DevEx(Developer Experience)は、開発者が日々の開発業務をどのように体験しているかを捉える考え方です。単にアウトプット量やデリバリー速度を見るのではなく、開発者が価値ある仕事に集中できる状態か、開発プロセス上の摩擦が少ないかを重視します。</p>
+        <p>DevEx は、開発者の満足度だけを扱うものではありません。ビルド・テスト・レビュー・デプロイの待ち時間、コードベースの理解しやすさ、会議や通知による中断、ドキュメントやツールの使いやすさなど、開発者の生産性を左右する実務上の条件を扱います。</p>
+
+        <h2>3 つの中核要素</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>要素</th><th>概要</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Feedback Loops</strong> — フィードバックループ</td><td>変更に対してどれだけ早く、質の高いフィードバックを得られるか</td></tr>
+              <tr><td><strong>Cognitive Load</strong> — 認知負荷</td><td>開発者が作業を進めるために必要な精神的負荷がどれだけ大きいか</td></tr>
+              <tr><td><strong>Flow State</strong> — フロー状態</td><td>中断されずに深く集中して作業できる時間を確保できているか</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Feedback Loops — フィードバックループ</h2>
+        <p>コードを書き、テストし、レビューを受け、デプロイするまでの各工程で、どれだけ早く学習・修正できるかを表す。</p>
+        <p>フィードバックが遅いと、開発者は作業文脈を失い、別タスクへ切り替える必要が生まれます。その結果、手戻りや待ち時間が増え、開発の流れが途切れやすくなります。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>ビルド時間</li>
+          <li>テスト実行時間</li>
+          <li>CI/CD パイプラインの待ち時間</li>
+          <li>Pull Request のレビュー開始までの時間</li>
+          <li>Pull Request のマージまでの時間</li>
+          <li>デプロイのリードタイム</li>
+          <li>ローカルで変更を試すまでの容易さ</li>
+        </ul>
+
+        <h2>Cognitive Load — 認知負荷</h2>
+        <p>開発者が作業を進めるために必要な精神的負荷を表す。ソフトウェア開発には本質的な複雑さがありますが、ドキュメント不足・一貫性のないツール・不明確なプロセス・複雑すぎるアーキテクチャは不要な認知負荷を生みます。</p>
+        <p>認知負荷が高い状態では、開発者のエネルギーが本来解くべき問題ではなく、周辺情報の探索や手順の推測に消費されます。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>コードベースの理解しやすさ</li>
+          <li>ドキュメントの見つけやすさ・正確さ</li>
+          <li>技術的な質問への回答時間</li>
+          <li>オンボーディングにかかる時間</li>
+          <li>変更に対する自信</li>
+          <li>ツールや開発手順の一貫性</li>
+          <li>不明確な仕様・依存関係・責務分担の数</li>
+        </ul>
+
+        <h2>Flow State — フロー状態</h2>
+        <p>開発者が中断されず、明確な目標に向かって深く集中できる状態を表す。複雑な設計・実装・調査にはまとまった集中時間が必要であり、頻繁な会議・通知・割り込み・優先順位変更はフローを壊します。</p>
+        <p>フロー状態が守られているチームでは、開発者は難しい問題に取り組みやすくなり、成果物の品質や満足度も高まりやすくなります。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul class="metric-list">
+          <li>中断されない作業時間の長さ</li>
+          <li>会議時間・会議の分散具合</li>
+          <li>Slack やアラートなどの割り込み回数</li>
+          <li>コンテキストスイッチの頻度</li>
+          <li>優先順位の明確さ</li>
+          <li>タスクの粒度と完了条件の明確さ</li>
+          <li>集中して作業できているという開発者の実感</li>
+        </ul>
+
+        <h2>測定方法</h2>
+        <p>DevEx は、客観的なシステムデータだけでも、開発者アンケートだけでも十分に把握できません。実際のワークフローのデータと、開発者がどう感じているかの両方を組み合わせる必要があります。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>測定対象</th><th>例</th></tr></thead>
+            <tbody>
+              <tr><td><strong>開発者の認識</strong></td><td>ビルドやテスト速度への満足度、コードベースの複雑さの感じ方、集中時間を確保できているか</td></tr>
+              <tr><td><strong>システム・ワークフロー</strong></td><td>ビルド時間、テスト時間、レビュー所要時間、デプロイ頻度、会議数、割り込み頻度</td></tr>
+              <tr><td><strong>成果指標</strong></td><td>デリバリーのしやすさ、エンゲージメント、開発者満足度、定着率、品質、リードタイム</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>アンケート設計のポイント</h3>
+        <ul>
+          <li>目的を明確にする(ボトルネック特定、満足度の推移確認、施策効果の検証など)</li>
+          <li>5〜10 問程度に絞り、短時間で回答できるようにする</li>
+          <li>抽象的な質問ではなく、開発者が日々感じる具体的な体験に基づいて聞く</li>
+          <li>チーム・職種・在籍期間などで結果を分けて見る</li>
+          <li>平均値だけで判断せず、特定チームや新入社員などの偏りを確認する</li>
+          <li>回答を集めるだけで終わらせず、見つかった課題に対して改善アクションを示す</li>
+        </ul>
+
+        <h2>改善アプローチ</h2>
+        <p>DevEx 改善は、ツール導入だけでは完結しません。プロセス、文化、組織構造、オーナーシップを含めて、開発者の摩擦を継続的に減らす必要があります。</p>
+        <ol>
+          <li><strong>現状を測定する</strong> — フィードバックループ・認知負荷・フロー状態の 3 観点で、アンケートとシステムデータを集める</li>
+          <li><strong>摩擦点を特定する</strong> — 待ち時間、複雑さ、中断、責務の曖昧さなど、開発者の流れを止めている要因を見つける</li>
+          <li><strong>チーム単位で分析する</strong> — モバイル、バックエンド、プラットフォーム、新入社員など、立場によって課題は異なる</li>
+          <li><strong>改善のオーナーを決める</strong> — DevEx チーム、Platform チーム、Developer Productivity チームなど、継続的に見る責任を明確にする</li>
+          <li><strong>小さく改善して検証する</strong> — CI 短縮、レビュー SLA、ドキュメント整備、会議整理など、効果を確認しやすい施策から進める</li>
+          <li><strong>継続的にフィードバックを得る</strong> — 四半期アンケートだけでなく、レトロスペクティブや日常的な相談窓口も活用する</li>
+        </ol>
+
+        <h2>AI と DevEx</h2>
+        <p>AI コーディング支援やエージェントは DevEx に大きな影響を与える一方で、単純なコード生成量だけでは効果を判断できません。生成されたコードが保守しやすいか、開発者が未知のコードベースでも自信を持って変更できるか、フローや認知負荷にどう影響しているかを見る必要があります。</p>
+        <p><strong>メトリックの例</strong></p>
+        <ul>
+          <li><strong>利用状況</strong>: 日次・週次の AI ツール利用者数、AI 支援された Pull Request の割合、AI 生成コードの割合</li>
+          <li><strong>影響</strong>: 開発者 1 人あたりの時間削減、AI ツールへの満足度、変更への自信、コードの保守性</li>
+          <li><strong>コスト</strong>: 開発者 1 人あたりの AI ツール費用、削減時間を差し引いた純効果、ROI</li>
+        </ul>
+        <p>AI の導入では、短期的な速度向上だけでなく、長期的な品質・理解しやすさ・チームの働き方への影響を合わせて評価することが重要です。</p>
+
+        <h2>DORA・SPACE との関係</h2>
+        <ul>
+          <li><strong>DORA Metrics</strong> は、デプロイ頻度・変更のリードタイム・復旧時間・変更失敗率など、ソフトウェアデリバリーのパフォーマンスを測る</li>
+          <li><strong>SPACE</strong> は、満足度・パフォーマンス・活動・コラボレーション・効率とフローから、開発者生産性を多面的に捉える</li>
+          <li><strong>DevEx</strong> は、開発者が日々の仕事をどう体験しているかに焦点を当て、DORA や SPACE では見えにくい摩擦・認知負荷・集中状態を補完する</li>
+        </ul>
+        <p>DORA のようなアウトカム指標だけを見ると、「何が起きているか」は分かっても、「なぜ開発者が詰まっているか」は見えにくい。DevEx は、システムデータと開発者の認識を結びつけることで、改善すべき根本原因を見つけやすくします。</p>
+
+        <h2>重要な考え方</h2>
+        <ul>
+          <li>DevEx は福利厚生や職場環境だけでなく、開発作業そのものから摩擦を取り除く取り組み</li>
+          <li>生産性は、開発者の体験から生まれる。支援され、集中できる開発者ほど、持続的に良い成果を出しやすい</li>
+          <li>メトリックは単独で使わず、定量データと定性フィードバックを組み合わせる</li>
+          <li>ツールよりも、文化・プロセス・明確な意思決定・心理的安全性の影響が大きい</li>
+          <li>全社平均だけでなく、チーム・職種・経験年数ごとの差を見る</li>
+          <li>改善は一度きりではなく、測定・対話・実行・検証を繰り返す</li>
+        </ul>
+
+        <h2>参考</h2>
+        <ul>
+          <li><a href="https://getdx.com/blog/developer-experience/" target="_blank" rel="noopener">What is developer experience? Complete guide to DevEx measurement and improvement (2026)</a></li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <span>DevOps Insights · デザインサンプル（数値はダミー）</span>
+      <span class="footer-links">
+        <a href="./dora-metrics.html">DORA</a>
+        <a href="./dx-core-4.html">DX Core 4</a>
+        <a href="./space.html">SPACE</a>
+        <a href="./dev-ex.html">DevEx</a>
+      </span>
+    </footer>
+  </body>
+</html>
